@@ -135,6 +135,44 @@ COMMAND_PORT = 8890
 STREAM_PORT = 8891
 ```
 
+## Installation
+
+### Robot (Raspberry Pi)
+
+```bash
+# Clone repository
+git clone https://github.com/JannoLouwrens/autonomous-vineyard-robot.git
+cd autonomous-vineyard-robot
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Uncomment Pi-specific packages in requirements.txt:
+# RPi.GPIO, smbus2, spidev, pynmea2, picamera2
+```
+
+### Laptop Controller (Windows/macOS/Linux)
+
+**Windows:**
+```powershell
+git clone https://github.com/JannoLouwrens/autonomous-vineyard-robot.git
+cd autonomous-vineyard-robot
+
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+**macOS / Linux:**
+```bash
+git clone https://github.com/JannoLouwrens/autonomous-vineyard-robot.git
+cd autonomous-vineyard-robot
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Usage
 
 ### On Robot (Raspberry Pi)
@@ -151,6 +189,12 @@ python3 main.py
 
 ### Remote Control (Laptop)
 
+**Windows:**
+```powershell
+python laptop_controller.py
+```
+
+**macOS / Linux:**
 ```bash
 python3 laptop_controller.py
 ```
