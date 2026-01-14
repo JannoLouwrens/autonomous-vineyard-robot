@@ -10,6 +10,12 @@ An autonomous robot system for vineyard and orchard health/irrigation monitoring
 
 This robot autonomously navigates vineyard/orchard rows, scanning individual trees for health indicators using computer vision and thermal imaging. Designed to operate on Raspberry Pi with real-time sensor fusion and remote monitoring capabilities.
 
+## Design Rationale
+
+The goal was to reduce manual vineyard and orchard inspections while keeping the system reliable in field conditions. I started with a manually operated platform and incrementally layered autonomy: row detection for centering, trunk detection for per-tree inspection, and thermal analysis to surface irrigation issues that are hard to see visually.
+
+I deliberately split the system into modular subsystems (navigation, vision, analysis, network) so I could validate each piece independently on Raspberry Pi hardware. This approach let me iterate on YOLO training, sensor fusion, and remote telemetry without risking the full stack, then converge into a real-time loop that can run unattended in the field.
+
 ## Features
 
 ### Navigation
